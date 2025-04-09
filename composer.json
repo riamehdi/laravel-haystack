@@ -16,16 +16,16 @@
     "homepage": "https://github.com/sammyjo20/laravel-haystack",
     "require": {
         "php": "^8.1",
-        "illuminate/console": "^10.0 || ^11.7",
-        "illuminate/contracts": "^10.0 || ^11.7",
-        "illuminate/database": "^10.0 || ^v11.7",
-        "illuminate/queue": "^10.0 || ^11.7",
-        "illuminate/support": "^10.0 || ^11.7",
+        "illuminate/console": "^10.0 || ^11.7 || ^12.0",
+        "illuminate/contracts": "^10.0 || ^11.7 || ^12.0",
+        "illuminate/database": "^10.0 || ^v11.7 || ^12.0",
+        "illuminate/queue": "^10.0 || ^11.7 || ^12.0",
+        "illuminate/support": "^10.0 || ^11.7 || ^12.0",
         "laravel/serializable-closure": "^1.2"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.5",
-        "orchestra/testbench": "^8.0 || ^9.0",
+        "orchestra/testbench": "^8.0 || ^9.0 || ^10.0 || ^12.0",
         "pestphp/pest": "^v2.34",
         "pestphp/pest-plugin-laravel": "^1.2 || ^2.0",
         "sammyjo20/laravel-chunkable-jobs": "^1.1",

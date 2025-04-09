@@ -17,10 +17,8 @@ class HaystackServiceProvider extends ServiceProvider
 {
     /**
      * Register any application services.
-     *
-     * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->mergeConfigFrom(
             __DIR__.'/../config/haystack.php',
@@ -46,13 +44,13 @@ class HaystackServiceProvider extends ServiceProvider
     protected function publishConfigAndMigrations(): static
     {
         $this->publishes([
-            __DIR__.'/../config/haystack.php' => config_path('haystack.php'),
+            __DIR__.'/../config/haystack.php' => $this->app->configPath('haystack.php'),
         ], 'haystack-config');
 
         $this->publishes([
-            __DIR__.'/../database/migrations/create_haystacks_table.php.stub' => database_path('migrations/'.now()->format('Y_m_d_His').'_create_haystacks_table.php'),
-            __DIR__.'/../database/migrations/create_haystack_bales_table.php.stub' => database_path('migrations/'.now()->addSeconds(1)->format('Y_m_d_His').'_create_haystack_bales_table.php'),
-            __DIR__.'/../database/migrations/create_haystack_data_table.php.stub' => database_path('migrations/'.now()->addSeconds(2)->format('Y_m_d_His').'_create_haystack_data_table.php'),
+            __DIR__.'/../database/migrations/create_haystacks_table.php.stub' => $this->app->databasePath('migrations/'.now()->format('Y_m_d_His').'_create_haystacks_table.php'),
+            __DIR__.'/../database/migrations/create_haystack_bales_table.php.stub' => $this->app->databasePath('migrations/'.now()->addSeconds(1)->format('Y_m_d_His').'_create_haystack_bales_table.php'),
+            __DIR__.'/../database/migrations/create_haystack_data_table.php.stub' => $this->app->databasePath('migrations/'.now()->addSeconds(2)->format('Y_m_d_His').'_create_haystack_data_table.php'),
         ], 'haystack-migrations');
 
         return $this;
